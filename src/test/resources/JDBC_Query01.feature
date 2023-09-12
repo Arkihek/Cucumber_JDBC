@@ -2,7 +2,7 @@
 #  kullanıcı sayısının 11 olduğunu dogrulayiniz
 
   Feature: Query 01
-
+    @Q1
     Scenario: chat_users tablosundaki create_staff_id=1 olan kullanici sayisi testi
 
       * Database baglantisi kurulur.

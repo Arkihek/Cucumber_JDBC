@@ -94,9 +94,9 @@ public class JDBCReusableMethods {
 
 
     public static Connection getConnection() {
-        String url = "";
-        String username="";
-        String password="";
+        String url = ConfigReader.getProperty("db_credentials_url");
+        String username=ConfigReader.getProperty("db_username");
+        String password=ConfigReader.getProperty("db_password");
         try {
             connection = DriverManager.getConnection(url, username, password);
         } catch (SQLException e) {
@@ -110,6 +110,7 @@ public class JDBCReusableMethods {
 
     //used to get statement
     public static Statement getStatement() {
+
         try {
             statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
         } catch (SQLException e) {
