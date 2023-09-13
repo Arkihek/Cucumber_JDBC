@@ -14,7 +14,7 @@ public class QueryManage {
         return Query06;
     }
 
-    private String Query08 = "DELETE FROM wonderworld_qa2.visitors_book WHERE id=13;";
+    private String Query08 = "DELETE FROM wonderworld_qa2.visitors_book WHERE id=17;";
 
     public String getQuery08() {
         return Query08;
