@@ -88,4 +88,26 @@ public class DBstepDefinition {
     public void update_isleminin_yapildigi_dogrulanir() {
 
     }
+
+    @Given("Kayit ekleme query`si hazirlanir ve calistirilir.")
+    public void kayit_ekleme_query_si_hazirlanir_ve_calistirilir() throws SQLException {
+
+        String addQuery = ConfigReader.getProperty("query07");
+
+        int rowAffected = statement.executeUpdate(addQuery);
+
+        Assert.assertTrue(rowAffected>0);
+
+    }
+    @Given("Yeni kayit eklendigi dogrulanir.")
+    public void yeni_kayit_eklendigi_dogrulanir() {
+    }
+    @Given("Delete query`si hazirlanir ve calistirilir")
+    public void delete_query_si_hazirlanir_ve_calistirilir() throws SQLException {
+        String deleteQuery = queryManage.getQuery08();
+
+        int deleteRowCount = statement.executeUpdate(deleteQuery);
+
+        assertTrue(deleteRowCount>0);
+    }
 }

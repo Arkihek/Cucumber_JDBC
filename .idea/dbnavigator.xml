@@ -13,10 +13,14 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="88d9dc5e-8a43-46ba-b18b-daf4c75f2cde">
-      <console name="Wonderworld" type="STANDARD" schema="wonderworld_qa2" session="Main"><![CDATA[SELECT id FROM wonderworld_qa2.class_sections WHERE class_id = section_id;
-SELECT mother_name, mother_occupation FROM wonderworld_qa2.students WHERE lastname LIKE 'T%';
+      <console name="Wonderworld" type="STANDARD" schema="wonderworld_qa2" session="Main"><![CDATA[select id from wonderworld_qa2.class_sections where class_id = section_id;
+select mother_name, mother_occupation from wonderworld_qa2.students where lastname lıke 'T%';
 select * from wonderworld_qa2.topic;
-UPDATE wonderworld_qa2.topic SET name = 'Sophie' WHERE id = 13;]]></console>
+update wonderworld_qa2.topic set name = 'Sophie' where id = 13;
+select * from wonderworld_qa2.transport_route;
+insert into wonderworld_qa2.transport_route (route_title, is_active) values (802,'samsun','nope');
+DELETE FROM wonderworld_qa2.visitors_book WHERE id=13;
+SELECT * FROM wonderworld_qa2.visitors_book;]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
