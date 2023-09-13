@@ -3,7 +3,9 @@ package stepDefinitions;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
 import utilities.ConfigReader;
+import utilities.DB_utils;
 import utilities.JDBCReusableMethods;
+import utilities.QueryManage;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -15,6 +17,7 @@ public class DBstepDefinition {
 
     Statement statement ;
     ResultSet resultSet;
+    QueryManage queryManage = new QueryManage();
 
     @Given("Database baglantisi kurulur.")
     public void database_baglantisi_kurulur() {
@@ -61,6 +64,28 @@ public class DBstepDefinition {
         while (resultSet.next()){
             System.out.println(resultSet.getInt(1));
         }
+    }
+
+    @Given("Student tablosu icin query hazirlanir")
+    public void student_tablosu_icin_query_hazirlanir() throws SQLException {
+
+        String sql = queryManage.getQuery05();
+
+        resultSet = statement.executeQuery(sql);
+
+    }
+    @Given("student tablosundan donen sonuclari listeleyiniz")
+    public void student_tablosundan_donen_sonuclari_listeleyiniz() throws SQLException {
+        while (resultSet.next()){
+            System.out.println("Mother Name : "+resultSet.getString(1) + "        Mother Occopation : " + resultSet.getString(2));
+        }
+    }
+    @Given("Update query`si hazirlanip calistirilir")
+    public void update_query_si_hazirlanip_calistirilir() {
+        DB_utils.updatePrepared(ConfigReader.getProperty("query06"),ConfigReader.getProperty("updateName"),ConfigReader.getProperty("updateID"));
+    }
+    @Given("Update isleminin yapildigi dogrulanir")
+    public void update_isleminin_yapildigi_dogrulanir() {
 
     }
 }

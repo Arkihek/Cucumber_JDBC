@@ -2,7 +2,7 @@
 <project version="4">
   <component name="DBNavigator.Project.DataEditorManager">
     <record-view-column-sorting-type value="BY_INDEX" />
-    <value-preview-text-wrapping value="true" />
+    <value-preview-text-wrapping value="false" />
     <value-preview-pinned value="false" />
   </component>
   <component name="DBNavigator.Project.DatabaseBrowserManager">
@@ -13,7 +13,10 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="88d9dc5e-8a43-46ba-b18b-daf4c75f2cde">
-      <console name="Wonderworld" type="STANDARD" schema="wonderworld_qa2" session="Main"><![CDATA[SELECT id FROM wonderworld_qa2.class_sections WHERE class_id = section_id;]]></console>
+      <console name="Wonderworld" type="STANDARD" schema="wonderworld_qa2" session="Main"><![CDATA[SELECT id FROM wonderworld_qa2.class_sections WHERE class_id = section_id;
+SELECT mother_name, mother_occupation FROM wonderworld_qa2.students WHERE lastname LIKE 'T%';
+select * from wonderworld_qa2.topic;
+UPDATE wonderworld_qa2.topic SET name = 'Sophie' WHERE id = 13;]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
